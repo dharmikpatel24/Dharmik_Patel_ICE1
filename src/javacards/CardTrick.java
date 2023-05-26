@@ -14,6 +14,10 @@ public class CardTrick {
          Card c = new Card(Card.SUITS[new Random().nextInt(4)], new Random().nextInt(13) + 1);
          magicHand[i] = c;
       }
+      Card luckyCard = new Card();
+        luckyCard.setValue(7);  // Set the card number as desired
+        luckyCard.setSuit("Spades");  // Set the card suit as desired
+
 
       // Asking the user for Card value and suit, creating their card, and searching magicHand
       Scanner scanner = new Scanner(System.in);
