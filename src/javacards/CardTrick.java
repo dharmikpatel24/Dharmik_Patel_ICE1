@@ -1,32 +1,42 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package javacards;
 
-/**
- * A class that fills a magic hand of 7 cards with random Card Objects
- * and then asks the user to pick a card and searches the array of cards
- * for the match to the user's card. To be used as starting code in ICE 1
- * @author dancye
- */
+import java.util.Random;
+import java.util.Scanner;
+
 public class CardTrick {
-    
-    public static void main(String[] args)
-    {
-        Card[] magicHand = new Card[7];
-        
-        for (int i=0; i<magicHand.length; i++)
-        {
-            Card c = new Card();
-            //c.setValue(insert call to random number generator here)
-            //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
-        }
-        
-        //insert code to ask the user for Card value and suit, create their card
-        // and search magicHand here
-        //Then report the result here
-    }
-    
+
+   public static void main(String[] args) {
+      Card[] magicHand = new Card[7];
+
+      // Filling the magicHand array with random Card objects
+      for (int i = 0; i < magicHand.length; i++) {
+         Card c = new Card(Card.SUITS[new Random().nextInt(4)], new Random().nextInt(13) + 1);
+         magicHand[i] = c;
+      }
+
+      // Asking the user for Card value and suit, creating their card, and searching magicHand
+      Scanner scanner = new Scanner(System.in);
+      System.out.print("Enter the value of your card (1-13): ");
+      int userValue = scanner.nextInt();
+      System.out.print("Enter the suit of your card (Hearts, Diamonds, Spades, Clubs): ");
+      String userSuit = scanner.next();
+
+      Card userCard = new Card(userSuit, userValue);
+      boolean found = false;
+
+      for (Card card : magicHand) {
+         if (card.getValue() == userCard.getValue() && card.getSuit().equalsIgnoreCase(userCard.getSuit())) {
+            found = true;
+            break;
+         }
+      }
+
+      // Reporting the result
+      if (found) {
+         System.out.println("Congratulations! Your card is in the magic hand.");
+      } else {
+         System.out.println("Sorry! Your card is not in the magic hand.");
+      }
+   }
 }
