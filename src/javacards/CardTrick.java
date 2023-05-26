@@ -4,6 +4,9 @@ package javacards;
 import java.util.Random;
 import java.util.Scanner;
 
+/* Dharmik Patel
+ student ID :Sheridan college*/
+
 public class CardTrick {
 
    public static void main(String[] args) {
