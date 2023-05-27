@@ -29,7 +29,9 @@ public class CardTrick {
       System.out.print("Enter the suit of your card (Hearts, Diamonds, Spades, Clubs): ");
       String userSuit = scanner.next();
 
-      Card userCard = new Card(userSuit, userValue);
+      Card userCard = new Card( userSuit, 
+              
+              userValue);
       boolean found = false;
 
       for (Card card : magicHand) {
