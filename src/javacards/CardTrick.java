@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 /* Dharmik Patel
- student ID :Sheridan college   */
+ student ID :Sheridan coll   */
 
 public class CardTrick {
 
